@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Antoine Bäumler | Ingénieur IA & Systèmes Énergétiques</title>
-<meta name="description" content="Antoine Bäumler — Docteur en génie électrique. Deep learning, apprentissage par renforcement et optimisation appliqués aux systèmes énergétiques et embarqués.">
+<meta name="description" content="Antoine Bäumler — PhD in electrical engineering. Deep learning, reinforcement learning and optimization applied to energy and embedded systems.">
 <style>
   :root{
     --bg:#0d1117; --bg2:#11161d; --card:#161d27; --line:#232c38;
@@ -19,13 +19,16 @@
 
   /* Header */
   header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,17,23,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  nav{display:flex;align-items:center;justify-content:space-between;max-width:960px;margin:0 auto;padding:14px 24px}
-  .logo{font-weight:700;letter-spacing:.5px;color:var(--txt)}
+  nav{display:flex;align-items:center;justify-content:space-between;max-width:960px;margin:0 auto;padding:14px 24px;gap:16px}
+  .logo{font-weight:700;letter-spacing:.5px;color:var(--txt);white-space:nowrap}
   .logo span{color:var(--acc)}
-  nav ul{display:flex;gap:28px;list-style:none}
+  nav ul{display:flex;gap:24px;list-style:none}
   nav ul a{color:var(--mut);font-size:.92rem}
   nav ul a:hover{color:var(--txt);text-decoration:none}
-  @media(max-width:700px){nav ul{display:none}}
+  .lang{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;flex:0 0 auto}
+  .lang button{background:transparent;border:none;color:var(--mut);padding:6px 12px;cursor:pointer;font-size:.85rem;font-weight:600}
+  .lang button.on{background:linear-gradient(90deg,var(--acc),var(--acc2));color:#fff}
+  @media(max-width:760px){nav ul{display:none}}
 
   /* Hero */
   .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;padding-top:80px;
@@ -66,7 +69,6 @@
   .pub h3{font-size:1.02rem;line-height:1.45}
   .pub .meta{color:var(--mut);font-size:.9rem;margin-top:6px}
   .pub .venue{color:var(--txt);font-weight:600}
-  .pub .award{color:var(--acc2);font-size:.85rem;font-weight:600}
   @media(max-width:600px){.pub{flex-direction:column;gap:10px}}
 
   /* Timeline */
@@ -96,13 +98,17 @@
   <nav>
     <div class="logo">Antoine <span>Bäumler</span></div>
     <ul>
-      <li><a href="#recherche">Recherche</a></li>
-      <li><a href="#projets">Projets</a></li>
+      <li><a href="#recherche" data-fr="Recherche" data-en="Research">Recherche</a></li>
+      <li><a href="#projets" data-fr="Projets" data-en="Projects">Projets</a></li>
       <li><a href="#publications">Publications</a></li>
-      <li><a href="#parcours">Parcours</a></li>
-      <li><a href="#formation">Formation</a></li>
+      <li><a href="#parcours" data-fr="Parcours" data-en="Experience">Parcours</a></li>
+      <li><a href="#formation" data-fr="Formation" data-en="Education">Formation</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <div class="lang">
+      <button id="btn-fr" class="on" onclick="setLang('fr')">FR</button>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
   </nav>
 </header>
 
@@ -110,59 +116,64 @@
 <div class="hero">
   <div class="wrap">
     <h1>Antoine <span class="grad">Bäumler</span></h1>
-    <div class="role">Ingénieur IA & Systèmes Énergétiques — Deep Learning, Optimisation, Énergie</div>
-    <p class="lead">
-      Docteur en génie électrique, je conçois des systèmes d'intelligence artificielle de bout en bout :
-      réseaux de neurones séquentiels avec mécanismes d'attention pour le traitement de signaux,
-      apprentissage par renforcement pour la gestion d'énergie, et modèles embarqués fiables
-      pour des applications critiques.
-    </p>
+    <div class="role" data-fr="Ingénieur IA & Systèmes Énergétiques — Deep Learning, Optimisation, Énergie"
+                      data-en="AI & Energy Systems Engineer — Deep Learning, Optimization, Energy">Ingénieur IA & Systèmes Énergétiques — Deep Learning, Optimisation, Énergie</div>
+    <p class="lead" data-fr="Docteur en génie électrique, je conçois des systèmes d'intelligence artificielle de bout en bout : réseaux de neurones séquentiels avec mécanismes d'attention pour le traitement de signaux, apprentissage par renforcement pour la gestion d'énergie, et modèles embarqués fiables pour des applications critiques."
+                     data-en="PhD in electrical engineering, I design end-to-end artificial intelligence systems: sequential neural networks with attention mechanisms for signal processing, reinforcement learning for energy management, and reliable embedded models for critical applications.">Docteur en génie électrique, je conçois des systèmes d'intelligence artificielle de bout en bout : réseaux de neurones séquentiels avec mécanismes d'attention pour le traitement de signaux, apprentissage par renforcement pour la gestion d'énergie, et modèles embarqués fiables pour des applications critiques.</p>
     <div class="links">
-      <a class="btn primary" href="mailto:antoine.baeumler@proton.me">Me contacter</a>
+      <a class="btn primary" href="mailto:antoine.baeumler@proton.me" data-fr="Me contacter" data-en="Get in touch">Me contacter</a>
       <a class="btn" href="#publications">Publications</a>
-      <a class="btn" href="https://github.com/antobom">GitHub</a>
-      <a class="btn" href="https://www.linkedin.com/in/antoine-b%C3%A4umler-aab7b4172/">LinkedIn</a>
-      <!-- <a class="btn" href="#">CV (PDF)</a> -->
+      <a class="btn" href="https://github.com/antobom" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/antoine-b%C3%A4umler-aab7b4172" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://scholar.google.com/citations?user=Ra-mTeIAAAAJ&hl=fr&oi=ao" target="_blank" rel="noopener">Google Scholar</a>
+      <!-- <a class="btn" href="#" data-fr="CV (PDF)" data-en="Resume (PDF)">CV (PDF)</a> -->
     </div>
   </div>
-  <div class="scroll">▼ Défiler</div>
+  <div class="scroll" data-fr="▼ Défiler" data-en="▼ Scroll">▼ Défiler</div>
 </div>
 
 <!-- RECHERCHE -->
 <section id="recherche">
   <div class="wrap">
-    <h2 class="sec-title">Axes de recherche</h2>
-    <p class="sec-sub">Une approche allant de la modélisation mathématique jusqu'au déploiement sur systèmes contraints.</p>
+    <h2 class="sec-title" data-fr="Axes de recherche" data-en="Research Interests">Axes de recherche</h2>
+    <p class="sec-sub" data-fr="Une approche allant de la modélisation mathématique jusqu'au déploiement sur systèmes contraints."
+                        data-en="An approach spanning mathematical modeling all the way to deployment on constrained systems.">Une approche allant de la modélisation mathématique jusqu'au déploiement sur systèmes contraints.</p>
     <div class="grid">
       <div class="card reveal">
-        <h3>Deep Learning séquentiel & attention</h3>
-        <p>Réseaux convolutifs résiduels (ResNet) couplés à des récurrents (GRU) avec mécanisme d'attention de type Bahdanau, appliqués à la classification temps réel de signaux ECG sur systèmes embarqués portables.</p>
+        <h3 data-fr="Deep Learning séquentiel & attention" data-en="Sequential Deep Learning & Attention">Deep Learning séquentiel & attention</h3>
+        <p data-fr="Réseaux convolutifs résiduels (ResNet) couplés à des récurrents (GRU) avec mécanisme d'attention de type Bahdanau, appliqués à la classification temps réel de signaux ECG sur systèmes embarqués portables."
+            data-en="Residual convolutional networks (ResNet) coupled with recurrent layers (GRU) and a Bahdanau-style attention mechanism, applied to real-time ECG signal classification on portable embedded systems.">Réseaux convolutifs résiduels (ResNet) couplés à des récurrents (GRU) avec mécanisme d'attention de type Bahdanau, appliqués à la classification temps réel de signaux ECG sur systèmes embarqués portables.</p>
         <div class="tags"><span class="tag">ResNet</span><span class="tag">GRU</span><span class="tag">Attention</span><span class="tag">ECG</span><span class="tag">Edge AI</span></div>
       </div>
       <div class="card reveal">
-        <h3>Apprentissage par renforcement pour la gestion d'énergie</h3>
-        <p>Stratégies de gestion d'énergie par Soft Actor-Critic (SAC) avec conception de fonctions de récompense intégrant les contraintes de charge batterie, pour véhicules hybrides pile à combustible/batterie.</p>
+        <h3 data-fr="Apprentissage par renforcement pour la gestion d'énergie" data-en="Reinforcement Learning for Energy Management">Apprentissage par renforcement pour la gestion d'énergie</h3>
+        <p data-fr="Stratégies de gestion d'énergie par Soft Actor-Critic (SAC) avec conception de fonctions de récompense intégrant les contraintes de charge batterie, pour véhicules hybrides pile à combustible/batterie."
+            data-en="Energy management strategies based on Soft Actor-Critic (SAC) with reward function design incorporating battery state-of-charge constraints, for fuel cell/battery hybrid vehicles.">Stratégies de gestion d'énergie par Soft Actor-Critic (SAC) avec conception de fonctions de récompense intégrant les contraintes de charge batterie, pour véhicules hybrides pile à combustible/batterie.</p>
         <div class="tags"><span class="tag">SAC</span><span class="tag">RL</span><span class="tag">EMS</span><span class="tag">Batteries</span><span class="tag">FCV</span></div>
       </div>
       <div class="card reveal">
-        <h3>Diagnostic, pronostic & IA de confiance</h3>
-        <p>Détection d'anomalies, estimation de l'état de santé (SOH) et pronostic de dégradation des piles à combustible PEMFC : robustesse, gestion de l'incertitude et conditions hors distribution (OOD).</p>
-        <div class="tags"><span class="tag">Anomalies</span><span class="tag">SOH</span><span class="tag">Robustesse</span><span class="tag">OOD</span></div>
+        <h3 data-fr="Diagnostic, pronostic & IA de confiance" data-en="Diagnostics, Prognostics & Trustworthy AI">Diagnostic, pronostic & IA de confiance</h3>
+        <p data-fr="Détection d'anomalies, estimation de l'état de santé (SOH) et pronostic de dégradation des piles à combustible PEMFC : robustesse, gestion de l'incertitude et conditions hors distribution (OOD)."
+            data-en="Anomaly detection, state-of-health (SOH) estimation and degradation prognostics for PEMFC fuel cells: robustness, uncertainty handling and out-of-distribution (OOD) conditions.">Détection d'anomalies, estimation de l'état de santé (SOH) et pronostic de dégradation des piles à combustible PEMFC : robustesse, gestion de l'incertitude et conditions hors distribution (OOD).</p>
+        <div class="tags"><span class="tag">Anomalies</span><span class="tag">SOH</span><span class="tag">Robustness</span><span class="tag">OOD</span></div>
       </div>
       <div class="card reveal">
-        <h3>Modélisation des systèmes électrochimiques</h3>
-        <p>Modèles de piles à combustible PEMFC par approches analytiques, empiriques (algorithmes génétiques) et neuronales (RNN), avec prise en compte de l'hystérésis de polarisation et du vieillissement.</p>
-        <div class="tags"><span class="tag">PEMFC</span><span class="tag">RNN</span><span class="tag">Hystérésis</span><span class="tag">Vieillissement</span></div>
+        <h3 data-fr="Modélisation des systèmes électrochimiques" data-en="Electrochemical Systems Modeling">Modélisation des systèmes électrochimiques</h3>
+        <p data-fr="Modèles de piles à combustible PEMFC par approches analytiques, empiriques (algorithmes génétiques) et neuronales (RNN), avec prise en compte de l'hystérésis de polarisation et du vieillissement."
+            data-en="PEMFC fuel cell models based on analytical, empirical (genetic algorithms) and neural (RNN) approaches, accounting for polarization hysteresis and aging.">Modèles de piles à combustible PEMFC par approches analytiques, empiriques (algorithmes génétiques) et neuronales (RNN), avec prise en compte de l'hystérésis de polarisation et du vieillissement.</p>
+        <div class="tags"><span class="tag">PEMFC</span><span class="tag">RNN</span><span class="tag">Hysteresis</span><span class="tag">Aging</span></div>
       </div>
       <div class="card reveal">
-        <h3>Optimisation de systèmes énergétiques</h3>
-        <p>Programmation dynamique, principe du minimum de Pontryagin (PMP) et algorithmes génétiques pour l'optimisation de la consommation et la minimisation des dégradations sur cycles réels de conduite.</p>
-        <div class="tags"><span class="tag">PMP</span><span class="tag">DP</span><span class="tag">GA</span><span class="tag">Optimisation</span></div>
+        <h3 data-fr="Optimisation de systèmes énergétiques" data-en="Energy Systems Optimization">Optimisation de systèmes énergétiques</h3>
+        <p data-fr="Programmation dynamique, principe du minimum de Pontryagin (PMP) et algorithmes génétiques pour l'optimisation de la consommation et la minimisation des dégradations sur cycles réels de conduite."
+            data-en="Dynamic programming, Pontryagin's minimum principle (PMP) and genetic algorithms for consumption optimization and degradation minimization over real-world driving cycles.">Programmation dynamique, principe du minimum de Pontryagin (PMP) et algorithmes génétiques pour l'optimisation de la consommation et la minimisation des dégradations sur cycles réels de conduite.</p>
+        <div class="tags"><span class="tag">PMP</span><span class="tag">DP</span><span class="tag">GA</span><span class="tag">Optimization</span></div>
       </div>
       <div class="card reveal">
-        <h3>IA embarquée & validation expérimentale</h3>
-        <p>Déploiement et optimisation d'inférence sur cibles à ressources limitées, validation sur bancs réels (pile à combustible, convertisseurs DC/DC, charge réversible) et chaîne CAN/supervision.</p>
-        <div class="tags"><span class="tag">Embarqué</span><span class="tag">CAN</span><span class="tag">ROS</span><span class="tag">Banc d'essai</span></div>
+        <h3 data-fr="IA embarquée & validation expérimentale" data-en="Embedded AI & Experimental Validation">IA embarquée & validation expérimentale</h3>
+        <p data-fr="Déploiement et optimisation d'inférence sur cibles à ressources limitées, validation sur bancs réels (pile à combustible, convertisseurs DC/DC, charge réversible) et chaîne CAN/supervision."
+            data-en="Deployment and inference optimization on resource-constrained targets, validation on real test benches (fuel cell, DC/DC converters, reversible load) and CAN/supervision chains.">Déploiement et optimisation d'inférence sur cibles à ressources limitées, validation sur bancs réels (pile à combustible, convertisseurs DC/DC, charge réversible) et chaîne CAN/supervision.</p>
+        <div class="tags"><span class="tag">Embedded</span><span class="tag">CAN</span><span class="tag">ROS</span><span class="tag">Test bench</span></div>
       </div>
     </div>
   </div>
@@ -171,22 +182,26 @@
 <!-- PROJETS -->
 <section id="projets" class="alt">
   <div class="wrap">
-    <h2 class="sec-title">Projets</h2>
-    <p class="sec-sub">Sélection de projets marquants, du doctorat au postdoctorat.</p>
+    <h2 class="sec-title" data-fr="Projets" data-en="Projects">Projets</h2>
+    <p class="sec-sub" data-fr="Sélection de projets marquants, du doctorat au postdoctorat."
+                        data-en="A selection of significant projects, from PhD to postdoc.">Sélection de projets marquants, du doctorat au postdoctorat.</p>
     <div class="grid">
       <div class="card reveal">
-        <h3>Classification temps réel d'ischémie cardiaque</h3>
-        <p>Conception d'un réseau de neurones profond séquentiel — backbone ResNet, couche GRU et mécanisme d'attention type Bahdanau — pour la détection d'ischémie sur ECG, avec déploiement sur dispositif portable. Postdoctorat, Geeps–CentraleSupélec.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">TensorFlow/Keras</span><span class="tag">Edge AI</span><span class="tag">Postdoc 2025–</span></div>
+        <h3 data-fr="Classification temps réel d'ischémie cardiaque" data-en="Real-time cardiac ischemia classification">Classification temps réel d'ischémie cardiaque</h3>
+        <p data-fr="Conception d'un réseau de neurones profond séquentiel — backbone ResNet, couche GRU et mécanisme d'attention type Bahdanau — pour la détection d'ischémie sur ECG, avec déploiement sur dispositif portable. Postdoctorat, Geeps–CentraleSupélec."
+            data-en="Design of a deep sequential neural network — ResNet backbone, GRU layer and Bahdanau-style attention — for ischemia detection on ECG signals, deployed on a portable device. Postdoc, Geeps–CentraleSupélec.">Conception d'un réseau de neurones profond séquentiel — backbone ResNet, couche GRU et mécanisme d'attention type Bahdanau — pour la détection d'ischémie sur ECG, avec déploiement sur dispositif portable. Postdoctorat, Geeps–CentraleSupélec.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">TensorFlow/Keras</span><span class="tag">Edge AI</span><span class="tag" data-fr="Postdoc 2025–" data-en="Postdoc 2025–">Postdoc 2025–</span></div>
       </div>
       <div class="card reveal">
-        <h3>Gestion d'énergie hybride pile à combustible/batterie</h3>
-        <p>Stratégies SAC avec fonction de récompense dédiée aux contraintes SOC, modélisation de la dégradation, et validation complète sur banc expérimental. Thèse de doctorat, Université Paris-Saclay / ESTACA.</p>
-        <div class="tags"><span class="tag">Reinforcement Learning</span><span class="tag">PEMFC</span><span class="tag">EMS</span><span class="tag">Thèse 2021–2024</span></div>
+        <h3 data-fr="Gestion d'énergie hybride pile à combustible/batterie" data-en="Hybrid fuel cell/battery energy management">Gestion d'énergie hybride pile à combustible/batterie</h3>
+        <p data-fr="Stratégies SAC avec fonction de récompense dédiée aux contraintes SOC, modélisation de la dégradation, et validation complète sur banc expérimental. Thèse de doctorat, Université Paris-Saclay / ESTACA."
+            data-en="SAC strategies with reward functions dedicated to SOC constraints, degradation modeling, and full validation on an experimental test bench. PhD thesis, Université Paris-Saclay / ESTACA.">Stratégies SAC avec fonction de récompense dédiée aux contraintes SOC, modélisation de la dégradation, et validation complète sur banc expérimental. Thèse de doctorat, Université Paris-Saclay / ESTACA.</p>
+        <div class="tags"><span class="tag">Reinforcement Learning</span><span class="tag">PEMFC</span><span class="tag">EMS</span><span class="tag" data-fr="Thèse 2021–2024" data-en="PhD 2021–2024">Thèse 2021–2024</span></div>
       </div>
       <div class="card reveal">
-        <h3>Environnement de simulation pour agents IA (EDAG)</h3>
-        <p>Développement d'un environnement ROS-Gazebo pour l'entraînement d'agents IA, portage d'Android Automotive sur micro-contrôleur, application Python de lecture de trames CAN.</p>
+        <h3 data-fr="Environnement de simulation pour agents IA (EDAG)" data-en="Simulation environment for AI agents (EDAG)">Environnement de simulation pour agents IA (EDAG)</h3>
+        <p data-fr="Développement d'un environnement ROS-Gazebo pour l'entraînement d'agents IA, portage d'Android Automotive sur micro-contrôleur, application Python de lecture de trames CAN."
+            data-en="Development of a ROS-Gazebo environment for training AI agents, porting Android Automotive to a microcontroller, Python application for reading CAN frames.">Développement d'un environnement ROS-Gazebo pour l'entraînement d'agents IA, portage d'Android Automotive sur micro-contrôleur, application Python de lecture de trames CAN.</p>
         <div class="tags"><span class="tag">ROS</span><span class="tag">Gazebo</span><span class="tag">C++</span><span class="tag">Automotive</span></div>
       </div>
     </div>
@@ -197,7 +212,8 @@
 <section id="publications">
   <div class="wrap">
     <h2 class="sec-title">Publications</h2>
-    <p class="sec-sub">3 articles dans des revues internationales à comité de lecture, 3 communications en conférences et une thèse de doctorat.</p>
+    <p class="sec-sub" data-fr="3 articles dans des revues internationales à comité de lecture, 3 communications en conférences et une thèse de doctorat."
+                        data-en="3 articles in peer-reviewed international journals, 3 conference papers and a PhD thesis.">3 articles dans des revues internationales à comité de lecture, 3 communications en conférences et une thèse de doctorat.</p>
 
     <div class="pub reveal">
       <div class="year"><span class="badge">2026</span></div>
@@ -251,7 +267,7 @@
       <div class="year"><span class="badge thesis">2024</span></div>
       <div>
         <h3>Gestion de l'énergie basée sur le diagnostic/pronostic de défaut d'un véhicule électrique hybride à pile à combustible/batterie</h3>
-        <div class="meta"><b>A. Bäumler</b> — <span class="venue">Thèse de doctorat, Université Paris-Saclay</span>, EOBE (Electrical, Optical, Bio-Physics and Engineering)</div>
+        <div class="meta"><b>A. Bäumler</b> — <span class="venue" data-fr="Thèse de doctorat, Université Paris-Saclay" data-en="PhD thesis, Université Paris-Saclay">Thèse de doctorat, Université Paris-Saclay</span>, EOBE (Electrical, Optical, Bio-Physics and Engineering)</div>
       </div>
     </div>
   </div>
@@ -260,32 +276,44 @@
 <!-- PARCOURS -->
 <section id="parcours" class="alt">
   <div class="wrap">
-    <h2 class="sec-title">Expériences</h2>
-    <p class="sec-sub">Parcours entre recherche académique, enseignement et industrie.</p>
+    <h2 class="sec-title" data-fr="Expériences" data-en="Experience">Expériences</h2>
+    <p class="sec-sub" data-fr="Parcours entre recherche académique, enseignement et industrie."
+                        data-en="A path across academic research, teaching and industry.">Parcours entre recherche académique, enseignement et industrie.</p>
     <div class="tl">
       <div class="tl-item reveal">
-        <div class="when">2025 — Aujourd'hui</div>
-        <h3>Post-doctorant en IA</h3>
+        <div class="when">2025 — <span data-fr="Aujourd'hui" data-en="Present">Aujourd'hui</span></div>
+        <h3 data-fr="Post-doctorant en IA" data-en="Postdoctoral Researcher in AI">Post-doctorant en IA</h3>
         <div class="org">Geeps — CentraleSupélec, Paris-Saclay</div>
-        <p>Classification temps réel d'ischémie cardiaque sur systèmes embarqués portables : réseau séquentiel ResNet + GRU avec mécanisme d'attention type Bahdanau, optimisation de l'inférence sur cible contrainte.</p>
+        <p data-fr="Classification temps réel d'ischémie cardiaque sur systèmes embarqués portables : réseau séquentiel ResNet + GRU avec mécanisme d'attention type Bahdanau, optimisation de l'inférence sur cible contrainte."
+            data-en="Real-time cardiac ischemia classification on portable embedded systems: ResNet + GRU sequential network with Bahdanau-style attention, inference optimization on a constrained target.">Classification temps réel d'ischémie cardiaque sur systèmes embarqués portables : réseau séquentiel ResNet + GRU avec mécanisme d'attention type Bahdanau, optimisation de l'inférence sur cible contrainte.</p>
       </div>
       <div class="tl-item reveal">
         <div class="when">2024 — 2025</div>
-        <h3>Enseignant vacataire</h3>
-        <div class="org">Micro-entreprise — CESI, ESEO, ESTACA</div>
-        <p>268 heures d'enseignement : cours magistraux (thermique, électromagnétisme, thermodynamique, réseaux embarqués) et travaux dirigés/pratiques (algorithmique, automatique, machines électriques, matériaux pour le génie électrique).</p>
+        <h3 data-fr="Enseignant vacataire" data-en="Lecturer (adjunct)">Enseignant vacataire</h3>
+        <div class="org" data-fr="Micro-entreprise — CESI, ESEO, ESTACA" data-en="Freelance — CESI, ESEO, ESTACA">Micro-entreprise — CESI, ESEO, ESTACA</div>
+        <p data-fr="268 heures d'enseignement : cours magistraux (thermique, électromagnétisme, thermodynamique, réseaux embarqués) et travaux dirigés/pratiques (algorithmique, automatique, machines électriques, matériaux pour le génie électrique)."
+            data-en="268 hours of teaching: lectures (heat transfer, electromagnetism, thermodynamics, embedded networks) and tutorials/labs (algorithms, automatic control, electric machines, materials for electrical engineering).">268 heures d'enseignement : cours magistraux (thermique, électromagnétisme, thermodynamique, réseaux embarqués) et travaux dirigés/pratiques (algorithmique, automatique, machines électriques, matériaux pour le génie électrique).</p>
       </div>
       <div class="tl-item reveal">
         <div class="when">2021 — 2024</div>
-        <h3>Doctorant en génie électrique</h3>
+        <h3 data-fr="Doctorant en génie électrique" data-en="PhD Candidate in Electrical Engineering">Doctorant en génie électrique</h3>
         <div class="org">Université Paris-Saclay (EOBE) — ESTACA</div>
-        <p>Gestion d'énergie basée sur le diagnostic/pronostic de défauts d'un véhicule hybride pile à combustible/batterie. Stratégies par apprentissage par renforcement (SAC), optimisation (DP, PMP), modélisation PEMFC par RNN, validation expérimentale sur banc réel. 128 heures d'enseignement en data science/IA et algorithmique C.</p>
+        <p data-fr="Gestion d'énergie basée sur le diagnostic/pronostic de défauts d'un véhicule hybride pile à combustible/batterie. Stratégies par apprentissage par renforcement (SAC), optimisation (DP, PMP), modélisation PEMFC par RNN, validation expérimentale sur banc réel. 128 heures d'enseignement en data science/IA et algorithmique C."
+            data-en="Energy management based on fault diagnosis/prognostics for a fuel cell/battery hybrid vehicle. Reinforcement learning strategies (SAC), optimization (DP, PMP), RNN-based PEMFC modeling, experimental validation on a real test bench. 128 hours of teaching in data science/AI and C programming.">Gestion d'énergie basée sur le diagnostic/pronostic de défauts d'un véhicule hybride pile à combustible/batterie. Stratégies par apprentissage par renforcement (SAC), optimisation (DP, PMP), modélisation PEMFC par RNN, validation expérimentale sur banc réel. 128 heures d'enseignement en data science/IA et algorithmique C.</p>
       </div>
       <div class="tl-item reveal">
         <div class="when">2020 — 2021</div>
-        <h3>Ingénieur développement C++ (stages)</h3>
-        <div class="org">EDAG Engineering — Bavière, Allemagne</div>
-        <p>Environnement de simulation ROS-Gazebo pour l'entraînement d'agents IA, portage d'Android Automotive sur micro-contrôleur, support d'une application VR sous Unity, application Python de décodage de trames CAN.</p>
+        <h3 data-fr="Ingénieur développement C++ (stages)" data-en="C++ Development Engineer (internships)">Ingénieur développement C++ (stages)</h3>
+        <div class="org">EDAG Engineering — <span data-fr="Bavière, Allemagne" data-en="Bavaria, Germany">Bavière, Allemagne</span></div>
+        <p data-fr="Environnement de simulation ROS-Gazebo pour l'entraînement d'agents IA, portage d'Android Automotive sur micro-contrôleur, support d'une application VR sous Unity, application Python de décodage de trames CAN."
+            data-en="ROS-Gazebo simulation environment for training AI agents, porting Android Automotive to a microcontroller, support for a VR application in Unity, Python application for decoding CAN frames.">Environnement de simulation ROS-Gazebo pour l'entraînement d'agents IA, portage d'Android Automotive sur micro-contrôleur, support d'une application VR sous Unity, application Python de décodage de trames CAN.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="when">2017 — 2018</div>
+        <h3 data-fr="Stages ouvriers — automobile" data-en="Work-study internships — automotive">Stages ouvriers — automobile</h3>
+        <div class="org">DBF Volkswagen · Alliance Porsche</div>
+        <p data-fr="Mécanique automobile en garage et logistique en concession — première approche du secteur automobile."
+            data-en="Automotive mechanics in a garage and logistics in a dealership — first exposure to the automotive sector.">Mécanique automobile en garage et logistique en concession — première approche du secteur automobile.</p>
       </div>
     </div>
   </div>
@@ -294,25 +322,28 @@
 <!-- FORMATION -->
 <section id="formation">
   <div class="wrap">
-    <h2 class="sec-title">Formation</h2>
+    <h2 class="sec-title" data-fr="Formation" data-en="Education">Formation</h2>
     <div class="tl">
       <div class="tl-item reveal">
         <div class="when">2021 — 2024</div>
-        <h3>Doctorat en génie électrique</h3>
-        <div class="org">Université Paris-Saclay — EOBE, avec ESTACA</div>
-        <p>Thèse sur la gestion d'énergie et le diagnostic/pronostic pour véhicule hybride pile à combustible/batterie. Trois articles de revues, trois conférences.</p>
+        <h3 data-fr="Doctorat en génie électrique" data-en="PhD in Electrical Engineering">Doctorat en génie électrique</h3>
+        <div class="org">Université Paris-Saclay — EOBE, <span data-fr="avec ESTACA" data-en="with ESTACA">avec ESTACA</span></div>
+        <p data-fr="Thèse sur la gestion d'énergie et le diagnostic/pronostic pour véhicule hybride pile à combustible/batterie. Trois articles de revues, trois conférences."
+            data-en="Thesis on energy management and fault diagnosis/prognostics for a fuel cell/battery hybrid vehicle. Three journal articles, three conference papers.">Thèse sur la gestion d'énergie et le diagnostic/pronostic pour véhicule hybride pile à combustible/batterie. Trois articles de revues, trois conférences.</p>
       </div>
       <div class="tl-item reveal">
         <div class="when">2016 — 2021</div>
-        <h3>Diplôme d'ingénieur — Automobile & systèmes embarqués</h3>
-        <div class="org">ESTACA (École Supérieure des Techniques Aéronautiques et de Construction Automobile)</div>
-        <p>Spécialisation Transport connecté et intelligent, projet de recherche sur véhicule autonome miniature.</p>
+        <h3 data-fr="Diplôme d'ingénieur — Automobile & systèmes embarqués" data-en="Engineering Degree — Automotive & Embedded Systems">Diplôme d'ingénieur — Automobile & systèmes embarqués</h3>
+        <div class="org">ESTACA (<span data-fr="École Supérieure des Techniques Aéronautiques et de Construction Automobile" data-en="École Supérieure des Techniques Aéronautiques et de Construction Automobile">École Supérieure des Techniques Aéronautiques et de Construction Automobile</span>)</div>
+        <p data-fr="Spécialisation Transport connecté et intelligent, projet de recherche sur véhicule autonome miniature."
+            data-en="Specialization in connected and intelligent transport, research project on a miniature autonomous vehicle.">Spécialisation Transport connecté et intelligent, projet de recherche sur véhicule autonome miniature.</p>
       </div>
       <div class="tl-item reveal">
         <div class="when">2020</div>
         <h3>Deep Learning & Reinforcement Learning</h3>
-        <div class="org">Coursera — DeepLearning.AI · Université d'Alberta</div>
-        <p>Deep Learning Specialization et Reinforcement Learning (cours théoriques).</p>
+        <div class="org">Coursera — DeepLearning.AI · <span data-fr="Université d'Alberta" data-en="University of Alberta">Université d'Alberta</span></div>
+        <p data-fr="Deep Learning Specialization et Reinforcement Learning (cours théoriques)."
+            data-en="Deep Learning Specialization and Reinforcement Learning (theoretical courses).">Deep Learning Specialization et Reinforcement Learning (cours théoriques).</p>
       </div>
     </div>
   </div>
@@ -321,24 +352,44 @@
 <!-- CONTACT -->
 <section id="contact" class="contact">
   <div class="wrap">
-    <h2>Collaborons</h2>
-    <p>Ouvert aux opportunités en R&D, IA appliquée à l'énergie, et projets mêlant deep learning, optimisation et systèmes électriques.</p>
+    <h2 data-fr="Collaborons" data-en="Let's Collaborate">Collaborons</h2>
+    <p data-fr="Ouvert aux opportunités en R&D, IA appliquée à l'énergie, et projets mêlant deep learning, optimisation et systèmes électriques."
+        data-en="Open to R&D opportunities, AI applied to energy, and projects combining deep learning, optimization and electrical systems.">Ouvert aux opportunités en R&D, IA appliquée à l'énergie, et projets mêlant deep learning, optimisation et systèmes électriques.</p>
     <div class="links">
       <a class="btn primary" href="mailto:antoine.baeumler@proton.me">antoine.baeumler@proton.me</a>
-      <a class="btn" href="https://www.linkedin.com/in/antoine-b%C3%A4umler-aab7b4172/">LinkedIn</a>
-      <a class="btn" href="https://scholar.google.com/citations?user=Ra-mTeIAAAAJ&hl=fr&oi=ao">Google Scholar</a>
-      <a class="btn" href="https://github.com/antobom">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/antoine-b%C3%A4umler-aab7b4172" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://scholar.google.com/citations?user=Ra-mTeIAAAAJ&hl=fr&oi=ao" target="_blank" rel="noopener">Google Scholar</a>
+      <a class="btn" href="https://github.com/antobom" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">© 2026 Antoine Bäumler — Deep Learning · Optimisation · Systèmes énergétiques</div>
+  <div class="wrap">© 2026 Antoine Bäumler — <span data-fr="Deep Learning · Optimisation · Systèmes énergétiques" data-en="Deep Learning · Optimization · Energy Systems">Deep Learning · Optimisation · Systèmes énergétiques</span></div>
 </footer>
 
 <script>
+  // Animation d'apparition
   const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} }), {threshold:.12});
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Bascule de langue FR / EN
+  function applyLang(l){
+    document.documentElement.lang = l;
+    document.querySelectorAll('[data-' + l + ']').forEach(el => { el.innerHTML = el.dataset[l]; });
+    document.getElementById('btn-fr').classList.toggle('on', l === 'fr');
+    document.getElementById('btn-en').classList.toggle('on', l === 'en');
+    try { localStorage.setItem('lang', l); } catch(e) {}
+  }
+  function setLang(l){ applyLang(l); }
+
+  // Langue initiale : préférence sauvegardée, sinon langue du navigateur
+  (function(){
+    let l = null;
+    try { l = localStorage.getItem('lang'); } catch(e) {}
+    if(!l){ l = (navigator.language || 'fr').toLowerCase().startsWith('fr') ? 'fr' : 'en'; }
+    applyLang(l);
+  })();
 </script>
 </body>
 </html>
